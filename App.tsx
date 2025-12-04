@@ -16,8 +16,13 @@ const App: React.FC = () => {
   }, [goals]);
 
   const addGoal = (text: string) => {
+    // Fallback for random ID generation if crypto is not available
+    const id = typeof crypto !== 'undefined' && crypto.randomUUID 
+      ? crypto.randomUUID() 
+      : Date.now().toString(36) + Math.random().toString(36).substr(2);
+
     const newGoal: Goal = {
-      id: crypto.randomUUID(),
+      id,
       text,
       status: 'focus', // Default to focus (brain dump phase)
       createdAt: Date.now(),
