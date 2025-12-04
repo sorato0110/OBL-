@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Guide } from './components/Guide';
 import { GoalInput } from './components/GoalInput';
 import { GoalList } from './components/GoalList';
-import { AICoach } from './components/AICoach';
 import { Goal } from './types';
 
 const App: React.FC = () => {
@@ -45,9 +44,6 @@ const App: React.FC = () => {
     }
   };
 
-  const focusGoals = goals.filter(g => g.status === 'focus');
-  const excludedGoals = goals.filter(g => g.status === 'excluded');
-
   return (
     <div className="min-h-screen pb-20">
       <div className="max-w-5xl mx-auto px-4 py-10">
@@ -61,14 +57,16 @@ const App: React.FC = () => {
         </header>
 
         <main>
-          <Guide />
-          
-          <GoalInput onAdd={addGoal} />
-          
-          <AICoach 
-            focusGoals={focusGoals} 
-            excludedGoals={excludedGoals} 
-          />
+          {/* Sticky Header Wrapper: Keeps Guide and Input visible while scrolling lists */}
+          <div className="md:sticky md:top-0 md:z-30 md:bg-gray-50/95 md:backdrop-blur-sm md:-mx-4 md:px-4 md:pb-6 md:pt-2 transition-all">
+            <div className="mb-6">
+              <Guide />
+            </div>
+            
+            <div className="mb-8">
+              <GoalInput onAdd={addGoal} />
+            </div>
+          </div>
 
           <GoalList 
             goals={goals} 

@@ -3,7 +3,7 @@ import { BookOpen, AlertCircle, CheckCircle2 } from 'lucide-react';
 
 export const Guide: React.FC = () => {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-600 mb-8">
+    <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-600">
       <h1 className="text-2xl font-bold text-blue-600 mb-4 flex items-center gap-2">
         <BookOpen className="w-6 h-6" />
         ステップ1：目標を「棚卸し」し、「除外リスト」を作成

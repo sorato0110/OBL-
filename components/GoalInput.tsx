@@ -17,7 +17,7 @@ export const GoalInput: React.FC<GoalInputProps> = ({ onAdd }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-3 mb-8">
+    <form onSubmit={handleSubmit} className="flex gap-3">
       <input
         type="text"
         value={text}

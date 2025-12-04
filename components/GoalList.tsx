@@ -38,7 +38,7 @@ export const GoalList: React.FC<GoalListProps> = ({ goals, onToggle, onDelete })
             </div>
             <span className={`
               px-3 py-1 rounded-full text-sm font-bold
-              ${isOverLimit ? 'bg-red-100 text-red-600' : 'bg-blue-100 text-blue-600'}
+              ${isOverLimit ? 'bg-red-100 text-red-600' : 'bg-yellow-100 text-yellow-700'}
             `}>
               {focusGoals.length}
             </span>
